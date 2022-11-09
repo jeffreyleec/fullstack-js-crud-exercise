@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useTable } from "react-table";
 import { mockData } from "./mockData";
 import { Columns } from "./Columns";
+import './styles/table.css'
 
 export const Table = () => {
   // console.log(mockData)
@@ -19,36 +20,6 @@ export const Table = () => {
   // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, getCellProps } =
   //   tableInstance;
 
-  // const data = React.useMemo(
-  //   () => [
-  //     {
-  //       col1: 'Hello',
-  //       col2: 'World',
-  //     },
-  //     {
-  //       col1: 'react-table',
-  //       col2: 'rocks',
-  //     },
-  //     {
-  //       col1: 'whatever',
-  //       col2: 'you want',
-  //     },
-  //   ],
-  //   []
-  // )
-  // const columns = React.useMemo(
-  //   () => [
-  //     {
-  //       Header: 'Column 1',
-  //       accessor: 'col1', // accessor is the "key" in the data
-  //     },
-  //     {
-  //       Header: 'Column 2',
-  //       accessor: 'col2',
-  //     },
-  //   ],
-  //   []
-  // )
   const tableInstance = useTable({ columns, data })
 
   const {
@@ -58,10 +29,28 @@ export const Table = () => {
     rows,
     prepareRow,
   } = tableInstance
-  
+
+  function addUser(newUser) {
+    mockData.push(newUser)
+  }
+  function deleteUser() {
+    mockData.pop()
+  }
+
+  const user1= {
+    "id": 1,
+    "name": "Kyle Lowry",
+    "code": "F100",
+    "profession": "Drywall Installer",
+    "color": "#FF6600",
+    "city": "Brampton",
+    "branch": "Abacus",
+    "assigned": true
+  }
   return (
     // apply the table props
-    <table {...getTableProps()}>
+    <>
+        <table {...getTableProps()}>
       <thead>
         {// Loop over the header rows
         headerGroups.map(headerGroup => (
@@ -102,6 +91,10 @@ export const Table = () => {
         })}
       </tbody>
     </table>
+    <button onClick={addUser(user1)} >ADD</button>
+    <button onClick={deleteUser()} >Delete</button>
+    </>
+
   )
  
     // <table {...getTableProps}>
