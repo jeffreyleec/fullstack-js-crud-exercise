@@ -5,20 +5,28 @@ import { Columns } from "./Columns";
 import "./styles/table.css";
 
 export const SuperTable = () => {
-
-
   //only refresh on memoized value changes
   const columns = useMemo(() => Columns, []);
   const data = useMemo(() => mockData, []);
 
-
-
   const tableInstance = useTable({ columns, data }, useSortBy, usePagination);
 
-  const { getTableProps, getTableBodyProps, pageOptions, state, headerGroups, page, nextPage, previousPage, canNextPage, canPreviousPage,  prepareRow } =
-    tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    pageOptions,
+    setPageSize,
+    state,
+    headerGroups,
+    page,
+    nextPage,
+    previousPage,
+    canNextPage,
+    canPreviousPage,
+    prepareRow,
+  } = tableInstance;
 
-    const {pageIndex} = state
+  const { pageIndex, pageSize } = state;
   // function addUser(newUser) {
   //   mockData.push(newUser);
   // }
@@ -58,7 +66,11 @@ export const SuperTable = () => {
                         column.render("Header")
                       }
                       <span>
-                        {column.isSorted ? (column.isSortedDesc ? "🔽" : "🔼") : ""}
+                        {column.isSorted
+                          ? column.isSortedDesc
+                            ? "🔽"
+                            : "🔼"
+                          : ""}
                       </span>
                     </th>
                   ))
@@ -98,16 +110,35 @@ export const SuperTable = () => {
         </tbody>
       </table>
       <div>
+      
         <span>
-          Page{' '}
+          Page{" "}
           <strong>
-            {pageIndex+1} of {pageOptions.length} {" "}
+            {pageIndex + 1} of {pageOptions.length}{" "}
           </strong>
         </span>
-      <button onClick={()=>previousPage()} disabled={!canPreviousPage}>Previous</button>
-      <button onClick={()=>nextPage()} disabled={!canNextPage}>Next</button>
+        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+          Previous
+        </button>
+        <button onClick={() => nextPage()} disabled={!canNextPage}>
+          Next
+        </button>
       </div>
-     
+
+
+
+   <select
+          value={pageSize}
+          onChange={(e) => setPageSize(Number(e.target.value))}
+        >
+          {[5, 10, 20].map((pageSize) => (
+            <option key={pageSize} value={pageSize}>
+              Show {pageSize}
+            </option>
+          ))}
+        </select>
+
+   
     </>
   );
 
