@@ -9,92 +9,118 @@ app.use(express.json());
 
 //get all users
 app.get("/user", async (req, res) => {
-try {
-  const results = await db.query(" SELECT * from users;");
-  console.log(results, "check");
-
-  res.status(200).json({
-    status: "succes",
-    results: results.rows.length,
-    data: results.rows,
-  });
-}catch(err){
-  console.log(err)
-}
-  
-});
-
-
-
-// app.get("/user/:id", (req, res) => {
-//   console.log(req.params);
-//   // res.status(200).json({
-//   //   status:"succes",
-//   //   data:{user:['user1','user2']}
-
-//   // })
-// });
-app.get("/user/:id", async (req, res) => {
   try {
-    const results = await db.query( `SELECT * from users WHERE id = $1;`,[req.params.id]);
+    const results = await db.query(" SELECT * from users;");
     console.log(results, "check");
-  
+
     res.status(200).json({
       status: "succes",
       results: results.rows.length,
       data: results.rows,
     });
-  }catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
-    
-  });
-// //create a user
-// app.post("/user", async (req, res) => {
-//   try {
-//     const newUser =
-//       await pool.query(`INSERT INTO users(name, code, profession, color, city, branch, assigned)
-//     VALUES ('Kyle Lowry', 'F100', 'Drywall Installer', '#FF6600', 'Brampton', 'Abacus',true)`);
+});
 
-//     res.json(newUsers);
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// });
+//get one specific user
+app.get("/user/:id", async (req, res) => {
+  try {
+    const results = await db.query(`SELECT * from users WHERE id = $1;`, [
+      req.params.id,
+    ]);
+    console.log(results, "check");
+
+    res.status(200).json({
+      status: "succes",
+      results: results.rows.length,
+      data: results.rows,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//create a user with json format obj
+//{"name":"Kyle Lowry",
+// "code": "F100",
+// "profession": "Drywall Installer",
+// "color": "#FF6600",
+// "city": "Brampton",
+// "branch": "Abacus",
+// "assigned": true
+// }
 app.post("/user", async (req, res) => {
   try {
-    const results = await db.query(`INSERT INTO users(name, code, profession, color, city, branch, assigned)
-         VALUES ($1, $2, $3, $4, $5, $6, $7) ;`, [req.body.name, req.body.code, req.body.profession, req.body.color, req.body.city, req.body.branch, req.body.assigned]);
-    
+    const results = await db.query(
+      `INSERT INTO users(name, code, profession, color, city, branch, assigned)
+         VALUES ($1, $2, $3, $4, $5, $6, $7) ;`,
+      [
+        req.body.name,
+        req.body.code,
+        req.body.profession,
+        req.body.color,
+        req.body.city,
+        req.body.branch,
+        req.body.assigned,
+      ]
+    );
+
     console.log(results);
-  
+
     res.status(201).json({
       status: "success",
       results: results.rows.length,
       data: results.rows[0],
     });
-  }catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
-    
-  });
-// //delete a user
-// app.delete("/user/:id", (req, res) => {
-//   res.status(204).json({
-//     status: "success",
-//   });
-// });
+});
 
-// app.put("/user/:id", (req, res) => {
-//   console.log("req.body.id");
-//   console.log(req.body);
-//   res.status(200).json({
-//     status: "success",
-//     data: {
-//       user: 1,
-//     },
-//   });
-// });
+//edit a user by id
+app.put("/user/:id", async (req, res) => {
+  try {
+    const results = await db.query(
+      `UPDATE users SET name = $1, code=$2, profession=$3, color=$4, city=$5, branch=$6, assigned=$7 WHERE id=$8`,
+      [
+        req.body.name,
+        req.body.code,
+        req.body.profession,
+        req.body.color,
+        req.body.city,
+        req.body.branch,
+        req.body.assigned,
+        req.params.id,
+      ]
+    );
+
+    console.log(results);
+
+    res.status(201).json({
+      status: "success",
+      results: results.rows.length,
+      data: results.rows[0],
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+
+//delete a user by id
+app.delete("/user/:id", async (req, res) => {
+  try {
+    const results = await db.query(`DELETE FROM users WHERE id = $1`, [req.params.id]);
+    console.log(results, "check");
+
+    res.status(200).json({
+      status: "succes",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
