@@ -8,7 +8,7 @@ CREATE TABLE users (
     color VARCHAR(255) NOT NULL,
     city VARCHAR(255) NOT NULL,
     branch VARCHAR(255) NOT NULL,
-    assigned BOOLEAN DEFAULT FALSE
+    assigned VARCHAR(255) NOT NULL
 );
 
 

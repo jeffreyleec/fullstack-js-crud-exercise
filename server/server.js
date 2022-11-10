@@ -2,8 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const db = require("./db");
 const app = express();
+const cors = require("cors");
 
-// app.use(cors());
+app.use(cors());
 //middleware takes req body and attach it to req
 app.use(express.json());
 
@@ -11,7 +12,7 @@ app.use(express.json());
 app.get("/user", async (req, res) => {
   try {
     const results = await db.query(" SELECT * from users;");
-    console.log(results, "check");
+    console.log(results.rows[0].assigned);
 
     res.status(200).json({
       status: "succes",
@@ -54,7 +55,7 @@ app.post("/user", async (req, res) => {
   try {
     const results = await db.query(
       `INSERT INTO users(name, code, profession, color, city, branch, assigned)
-         VALUES ($1, $2, $3, $4, $5, $6, $7) ;`,
+         VALUES ($1, $2, $3, $4, $5, $6, $7) returning * ;`,
       [
         req.body.name,
         req.body.code,
@@ -107,11 +108,12 @@ app.put("/user/:id", async (req, res) => {
   }
 });
 
-
 //delete a user by id
 app.delete("/user/:id", async (req, res) => {
   try {
-    const results = await db.query(`DELETE FROM users WHERE id = $1`, [req.params.id]);
+    const results = await db.query(`DELETE FROM users WHERE id = $1`, [
+      req.params.id,
+    ]);
     console.log(results, "check");
 
     res.status(200).json({

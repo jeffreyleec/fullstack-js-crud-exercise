@@ -23,11 +23,3 @@ VALUES
 ('Elektra', 'F120', 'Hero', 'black', 'Oshwa', 'Abacus',false),
 ('Doctor Strange', 'F121', 'Hero', 'blue', 'Oshwa', 'Pillsworth',true);
 
- id: 2,
-    name: "DeMar DeRozan",
-    code: "F101",
-    profession: "Drywall Installer",
-    color: "yellow",
-    city: "Brampton",
-    branch: "Pillsworth",
-    assigned: false,
