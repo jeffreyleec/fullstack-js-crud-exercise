@@ -86,6 +86,7 @@ export const Table = () => {
                   </td>
                 )
               })}
+             
             </tr>
           )
         })}

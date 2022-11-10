@@ -1,13 +1,30 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useContext } from "react";
 import { useTable, useSortBy, usePagination } from "react-table";
 import { mockData } from "./mockData";
 import { Columns } from "./Columns";
 import "./styles/table.css";
+import UserRetrieve from "../apis/UserRetrieve";
+import { UsersContext } from "../context/UsersContext";
 
-export const SuperTable = () => {
+export const SuperTable = (props) => {
+  const { users, setUsers } = useContext(UsersContext);
+
+  // const data = useMemo(() => {
+    useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await UserRetrieve.get("/user");
+        // console.log(response.data.data);
+        setUsers(response.data.data);
+      } catch (err) {}
+    };
+    fetchData();
+  }, []);
+
   //only refresh on memoized value changes
   const columns = useMemo(() => Columns, []);
-  const data = useMemo(() => mockData, []);
+  //  const data = useMemo(() => mockData, []);
+  const data = useMemo(() => users, [users]);
 
   const tableInstance = useTable({ columns, data }, useSortBy, usePagination);
 
@@ -34,16 +51,16 @@ export const SuperTable = () => {
   //   mockData.pop();
   // }
 
-  const user1 = {
-    id: 1,
-    name: "Kyle Lowry",
-    code: "F100",
-    profession: "Drywall Installer",
-    color: "#FF6600",
-    city: "Brampton",
-    branch: "Abacus",
-    assigned: true,
-  };
+  // const user1 = {
+  //   id: 1,
+  //   name: "Kyle Lowry",
+  //   code: "F100",
+  //   profession: "Drywall Installer",
+  //   color: "#FF6600",
+  //   city: "Brampton",
+  //   branch: "Abacus",
+  //   assigned: true,
+  // };
   return (
     // apply the table props
     <>
@@ -98,11 +115,14 @@ export const SuperTable = () => {
                           {
                             // Render the cell contents
                             cell.render("Cell")
+                            
                           }
+                          
                         </td>
                       );
                     })
                   }
+                   {/* <button>Delete</button> */}
                 </tr>
               );
             })
@@ -110,7 +130,6 @@ export const SuperTable = () => {
         </tbody>
       </table>
       <div>
-      
         <span>
           Page{" "}
           <strong>
@@ -125,20 +144,16 @@ export const SuperTable = () => {
         </button>
       </div>
 
-
-
-   <select
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-          {[5, 10, 20].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select>
-
-   
+      <select
+        value={pageSize}
+        onChange={(e) => setPageSize(Number(e.target.value))}
+      >
+        {[5, 10, 20].map((pageSize) => (
+          <option key={pageSize} value={pageSize}>
+            Show {pageSize}
+          </option>
+        ))}
+      </select>
     </>
   );
 
