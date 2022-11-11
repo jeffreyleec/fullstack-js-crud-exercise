@@ -3,19 +3,17 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { UpdateUser } from "./routes/UpdateUser";
 import { UsersContextProvider } from "./context/UsersContext";
+import "./app.css"
+import homeIcon from "./components/assets/homeIcon.png"
 
 function App() {
   return (
     <UsersContextProvider>
       <Router>
-        <div>
+        <div className="nav">
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
+          <Link to="/"><img  Link to="/" src={homeIcon} alt="home"></img></Link>
 
-            </ul>
           </nav>
 
           {/* A <Switch> looks through its children <Route>s and
