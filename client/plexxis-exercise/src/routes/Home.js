@@ -5,6 +5,7 @@ import { SuperTable } from "../components/SuperTable";
 // import { SuperTable } from './components/SuperTable';
 // import {Table} from '../components/Table'
 import {DeleteUser} from '../components/DeleteUser'
+import { EditUser } from "../components/EditUser";
 export const Home = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ export const Home = () => {
       <AddUser />
       <SuperTable />
       <DeleteUser />
+      <EditUser />
       {/* <Table /> */}
     </div>
   );

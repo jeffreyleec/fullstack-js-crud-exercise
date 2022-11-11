@@ -6,8 +6,10 @@ import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 
+
 export const SuperTable = (props) => {
   const { users, setUsers } = useContext(UsersContext);
+
 
   // const data = useMemo(() => {
     useEffect(() => {
