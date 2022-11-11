@@ -5,20 +5,11 @@ import { Columns } from "./Columns";
 import './styles/table.css'
 
 export const Table = () => {
-  // console.log(mockData)
-  // console.log(Columns)
 
   //only refresh on memoized value changes
    const columns = useMemo(() => Columns, []);
    const data = useMemo(() => mockData, []);
 
-  // const tableInstance = useTable({
-  //   columns,
-  //   data,
-  // });
-
-  // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, getCellProps } =
-  //   tableInstance;
 
   const tableInstance = useTable({ columns, data })
 
@@ -98,31 +89,5 @@ export const Table = () => {
 
   )
  
-    // <table {...getTableProps}>
-    //   <thead>
-    //     {headerGroups.map((headerGroup) => (
-    //       <tr>
-    //         {" "}
-    //         {...headerGroup.getHeaderGroupProps()}
-    //         {headerGroup.headers.map((column) => (
-    //           <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-    //         ))}
-    //       </tr>
-    //     ))}
-    //   </thead>
-
-    //   <tbody {...getTableBodyProps()}>
-    //     {rows.map((row) => {
-    //       prepareRow(row);
-    //       return (
-    //         <tr {...row.getRowProps()}>
-    //           {row.cells.map((cell) => {
-    //             return <td {...getCellProps()}>{cell.render("Cell")}</td>;
-    //           })}
-    //         </tr>
-    //       );
-    //     })}
-    //   </tbody>
-    // </table>
-  
+   
 };

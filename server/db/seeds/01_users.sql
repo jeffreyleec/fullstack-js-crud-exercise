@@ -12,7 +12,7 @@ VALUES
 ('Thor', 'F109', 'Hero', 'brown', 'Hamilton', 'Pillsworth',true),
 ('Wolverine', 'F110', 'Hero', 'yellow', 'Markham', 'Abacus',true),
 ('Wonder Woman', 'F111', 'Hero', 'red', 'Markham', 'Pillsworth',false),
-('Zatara', 'F112, 'Hero', 'black', 'Markham', 'Abacus',true),
+('Zatara', 'F112', 'Hero', 'black', 'Markham', 'Abacus',true),
 ('Incredible Hulk', 'F113', 'Hero', 'green', 'Markham', 'Pillsworth',false),
 ('The Shadow', 'F114', 'Hero', 'black', 'Oakville', 'Abacus',false),
 ('Ghost Rider', 'F115', 'Hero', 'black', 'Oakville', 'Pillsworth',true),

@@ -46,23 +46,7 @@ export const SuperTable = (props) => {
   } = tableInstance;
 
   const { pageIndex, pageSize } = state;
-  // function addUser(newUser) {
-  //   mockData.push(newUser);
-  // }
-  // function deleteUser() {
-  //   mockData.pop();
-  // }
 
-  // const user1 = {
-  //   id: 1,
-  //   name: "Kyle Lowry",
-  //   code: "F100",
-  //   profession: "Drywall Installer",
-  //   color: "#FF6600",
-  //   city: "Brampton",
-  //   branch: "Abacus",
-  //   assigned: true,
-  // };
   return (
     // apply the table props
     <>
@@ -124,7 +108,6 @@ export const SuperTable = (props) => {
                       );
                     })
                   }
-                   {/* <button>Delete</button> */}
                 </tr>
               );
             })
@@ -159,30 +142,5 @@ export const SuperTable = (props) => {
     </>
   );
 
-  // <table {...getTableProps}>
-  //   <thead>
-  //     {headerGroups.map((headerGroup) => (
-  //       <tr>
-  //         {" "}
-  //         {...headerGroup.getHeaderGroupProps()}
-  //         {headerGroup.headers.map((column) => (
-  //           <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-  //         ))}
-  //       </tr>
-  //     ))}
-  //   </thead>
 
-  //   <tbody {...getTableBodyProps()}>
-  //     {rows.map((row) => {
-  //       prepareRow(row);
-  //       return (
-  //         <tr {...row.getRowProps()}>
-  //           {row.cells.map((cell) => {
-  //             return <td {...getCellProps()}>{cell.render("Cell")}</td>;
-  //           })}
-  //         </tr>
-  //       );
-  //     })}
-  //   </tbody>
-  // </table>
 };

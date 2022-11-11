@@ -24,29 +24,6 @@ try{
 console.log(err)
 }
 }
-// const handleSubmit = async (e) =>{
-//   //avoids reload when form submission
-//   e.preventDefault()
-
-//   try{
-//     const response = await UserRetrieve.post("/user", {
-//       name,
-//       code,
-//       profession,
-//       color,
-//       city,
-//       branch,
-//       assigned,
-//     })
-//      addUser(response.data.data)
-//     console.log(response)
-//   }catch(err){
-//     console.log(err)
-
-//   }
-
-// }
-
   
   return (
     <div>

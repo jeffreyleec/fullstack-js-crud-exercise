@@ -1,68 +1,34 @@
-// import UserRetrieve from "../apis/UserRetrieve"
-
-// const handleDelete = async (id) => {
-// try{
-//   const response = await UserRetrieve.delete(`/user/${id}`)
-//   console.log(response)
-// }catch(err){
-// console.log(err)
-// }
-// }
-
-export const Columns = 
-[
+export const Columns = [
   {
     Header: "ID",
-    accessor: "id"
-    
+    accessor: "id",
   },
   {
     Header: "Name",
-    accessor: "name"
+    accessor: "name",
   },
   {
     Header: "Code",
-    accessor: "code"
+    accessor: "code",
   },
   {
     Header: "Profession",
-    accessor: "profession"
+    accessor: "profession",
   },
   {
     Header: "Color",
-    accessor: "color"
+    accessor: "color",
   },
   {
     Header: "City",
-    accessor: "city"
+    accessor: "city",
   },
   {
     Header: "Branch",
-    accessor: "branch"
+    accessor: "branch",
   },
   {
     Header: "Assigned",
-    accessor: "assigned"
-   }, 
- 
-  // {
-  //   Header: "Delete",
-  //   accessor:  "delete",
-    
-  //   Cell: (value)=> (
-  //   // <span onClick={() => {
-  //   //           let data = this.state.data;
-  //   //           console.log(this.state.data[row.index]);
-  //   //           data.splice(row.index, 1)
-  //   //           this.setState({data})
-  //   //         }}>
-  //   // <span onClick={(row) => handleDelete(row.id)}
-  //   // className="btn btn-danger">
-  //   <span onClick={(value)=> console.log(value)}
-  //   className="btn btn-danger">
-  //             Delete
-  //           </span> 
-  //   ) 
-  // },
-]
-
+    accessor: "assigned",
+  },
+];
