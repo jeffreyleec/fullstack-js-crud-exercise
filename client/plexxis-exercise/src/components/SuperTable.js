@@ -6,6 +6,7 @@ import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import "./styles/superTable.css";
+import { Header } from "./Header";
 
 export const SuperTable = (props) => {
   const { users, setUsers } = useContext(UsersContext);
@@ -50,6 +51,18 @@ export const SuperTable = (props) => {
   return (
     // apply the table props
     <>
+              <Header />
+
+    <select
+        value={pageSize}
+        onChange={(e) => setPageSize(Number(e.target.value))}
+      >
+        {[5, 10, 20].map((pageSize) => (
+          <option key={pageSize} value={pageSize}>
+            Show {pageSize}
+          </option>
+        ))}
+      </select>
       <table {...getTableProps() } className="mainTable">
         <thead>
           {
@@ -129,16 +142,7 @@ export const SuperTable = (props) => {
         </button>
       </div>
 
-      <select
-        value={pageSize}
-        onChange={(e) => setPageSize(Number(e.target.value))}
-      >
-        {[5, 10, 20].map((pageSize) => (
-          <option key={pageSize} value={pageSize}>
-            Show {pageSize}
-          </option>
-        ))}
-      </select>
+      
     </>
   );
 

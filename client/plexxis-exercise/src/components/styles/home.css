@@ -1,7 +1,9 @@
 .home {
+  
   display: flex;
   flex-direction: row;
-  flex-wrap:wrap;
+  
+  /* flex-wrap:wrap; */
   
   /* width: 100%;
   flex-direction: column;
@@ -10,7 +12,12 @@
   
 }
 .sideBar {
-  width: 30%;
+  width: 10%;
+  height:100vh;
+  border: 1px solid;
+  font-size: 1.5em;
+ 
+ 
   /* height: 100%;
   width: 30%;
   position: absolute;
@@ -20,13 +27,23 @@
   background-color: lightblue; */
   }
 
-.tableContainer {
-  /* padding-top: 7rem;
+/* .tableContainer {
+  padding-left: 20em;
+  padding-top: 7rem;
   display: flex;
   position: absolute;
   left:500;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
-  max-width: 70%; */
+  
+  max-width: 70%;
+
+} */
+.tableContainer {
+  /* background-color: aqua; */
+  padding-top:3em;
+  padding-left: 10em;
+  width:auto;
+  align-items: center;
+
 }

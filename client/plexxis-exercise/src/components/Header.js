@@ -2,6 +2,7 @@ import React from 'react'
 
 export const Header = () => {
   return (
-    <div>Employee Database</div>
+    <p className="headerTitle">Employee Database</p>
+   
   )
 }

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import { useNavigate } from "react-router-dom";
+import "../components/styles/editUser.css";
 
 export const EditUser = () => {
   const { users, setUsers } = useContext(UsersContext);
@@ -14,8 +15,8 @@ export const EditUser = () => {
   };
 
   return (
-    <div>
-      EDIT/UPDATE User Information
+    <div className="editUserContainer">
+      <p className="editTitle">EDIT User Information</p>
       <form>
         <div className="form-row">
           <div className="col">

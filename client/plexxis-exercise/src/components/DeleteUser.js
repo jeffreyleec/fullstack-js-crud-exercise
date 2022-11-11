@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
+import "../components/styles/deleteUser.css";
+
 
 export const DeleteUser = () => {
   const {users, setUsers} = useContext(UsersContext)
@@ -26,8 +28,8 @@ console.log(err)
 }
   
   return (
-    <div>
-     Delete a USER 
+    <div className="deleteUserContainer">
+     <p className="deleteTitle">Delete a USER </p>
       <form>
         <div className="form-row">
           <div className="col">

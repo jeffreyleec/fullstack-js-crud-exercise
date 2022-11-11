@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
+import "../components/styles/addUser.css";
+
+
 export const AddUser = () => {
   const { addUser } = useContext(UsersContext);
   //controlled components
@@ -34,9 +37,9 @@ export const AddUser = () => {
   };
 
   return (
-    <div>
-      AddUser
-      <form>
+    <div className="addUserContainer">
+      <p className="addTitle">Add Employee</p>
+      <form className="addForm">
         <div className="form-row">
           <div className="col">
             <input

@@ -1,6 +1,6 @@
 import React from "react";
 import { AddUser } from "../components/AddUser";
-import { Header } from "../components/Header";
+// import { Header } from "../components/Header";
 import { SuperTable } from "../components/SuperTable";
 // import { SuperTable } from './components/SuperTable';
 // import {Table} from '../components/Table'
@@ -13,15 +13,13 @@ export const Home = () => {
     <>
       <div className="home">
         <div className="sideBar">
-          <Header />
           <AddUser />
           <DeleteUser />
           <EditUser />
-
-          <div className="tableContainer">
-            <SuperTable />
-            {/* <Table /> */}
-          </div>
+        </div>
+        <div className="tableContainer">
+          <SuperTable />
+          {/* <Table /> */}
         </div>
       </div>
     </>
