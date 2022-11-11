@@ -128,6 +128,15 @@ export const UpdateUser = () => {
           </div>
           <div>
             <button
+            disabled={
+              !name ||
+              !code ||
+              !profession ||
+              !color ||
+              !city ||
+              !branch ||
+              !assigned
+            }
               onClick={handleSubmit}
               type="submit"
               className="add-user-btn"

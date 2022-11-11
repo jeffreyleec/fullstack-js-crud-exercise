@@ -42,7 +42,7 @@ console.log(err)
           </div>
        
           <div>          
-            <button onClick={()=>handleDelete(id)} type="submit" >❌</button>
+            <button   disabled={!id} onClick={()=>handleDelete(id)} type="submit" >❌</button>
           </div>
         </div>
       </form>

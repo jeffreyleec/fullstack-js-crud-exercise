@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors());
+
 //middleware takes req body and attach it to req
 app.use(express.json());
 
@@ -12,7 +13,7 @@ app.use(express.json());
 app.get("/user", async (req, res) => {
   try {
     const results = await db.query(" SELECT * from users;");
-    console.log(results.rows[0].assigned);
+    console.log(results.rows[0]);
 
     res.status(200).json({
       status: "succes",

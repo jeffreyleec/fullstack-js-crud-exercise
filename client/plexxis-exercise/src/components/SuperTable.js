@@ -5,7 +5,7 @@ import { Columns } from "./Columns";
 import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
-
+import "./styles/superTable.css";
 
 export const SuperTable = (props) => {
   const { users, setUsers } = useContext(UsersContext);
@@ -50,7 +50,7 @@ export const SuperTable = (props) => {
   return (
     // apply the table props
     <>
-      <table {...getTableProps()}>
+      <table {...getTableProps() } className="mainTable">
         <thead>
           {
             // Loop over the header rows
@@ -121,10 +121,10 @@ export const SuperTable = (props) => {
             {pageIndex + 1} of {pageOptions.length}{" "}
           </strong>
         </span>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <button onClick={() => previousPage()} disabled={!canPreviousPage} type="button">
           Previous
         </button>
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        <button onClick={() => nextPage()} disabled={!canNextPage} type="button">
           Next
         </button>
       </div>

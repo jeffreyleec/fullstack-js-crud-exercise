@@ -20,16 +20,19 @@ export const EditUser = () => {
         <div className="form-row">
           <div className="col">
             <input
+            
+            
               value={id}
               onChange={(e) => setID(e.target.value)}
               type="text"
               className="form-control"
               placeholder="Enter ID"
+              required
             />
           </div>
 
           <div>
-            <button onClick={() => handleEdit(id)} type="submit">
+            <button   disabled={!id} onClick={() => handleEdit(id)} type="button">
               🖊
             </button>
           </div>

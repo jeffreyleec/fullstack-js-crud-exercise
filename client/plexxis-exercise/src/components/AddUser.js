@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 export const AddUser = () => {
-  const {addUser} = useContext(UsersContext)
+  const { addUser } = useContext(UsersContext);
   //controlled components
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
@@ -12,31 +12,27 @@ export const AddUser = () => {
   const [branch, setBranch] = useState("");
   const [assigned, setAssigned] = useState("");
 
+  const handleSubmit = async (e) => {
+    //avoids reload when form submission
+    e.preventDefault();
 
-const handleSubmit = async (e) =>{
-  //avoids reload when form submission
-  e.preventDefault()
+    try {
+      const response = await UserRetrieve.post("/user", {
+        name,
+        code,
+        profession,
+        color,
+        city,
+        branch,
+        assigned,
+      });
+      addUser(response.data.data);
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  try{
-    const response = await UserRetrieve.post("/user", {
-      name,
-      code,
-      profession,
-      color,
-      city,
-      branch,
-      assigned,
-    })
-     addUser(response.data.data)
-    console.log(response)
-  }catch(err){
-    console.log(err)
-
-  }
-
-}
-
-  
   return (
     <div>
       AddUser
@@ -97,17 +93,35 @@ const handleSubmit = async (e) =>{
             />
           </div>
           <div className="col">
-            <select 
-            value={assigned}
-            onChange={(e) => setAssigned(e.target.value)}
-            className="form-control">
-              <option  hidden value="" >Assigned</option>
+            <select
+              value={assigned}
+              onChange={(e) => setAssigned(e.target.value)}
+              className="form-control"
+            >
+              <option hidden value="">
+                Assigned
+              </option>
               <option value={true}>True</option>
               <option value={false}>False</option>
             </select>
           </div>
           <div>
-            <button onClick={handleSubmit} type="submit" className="add-user-btn">Add</button>
+            <button
+              disabled={
+                !name ||
+                !code ||
+                !profession ||
+                !color ||
+                !city ||
+                !branch ||
+                !assigned
+              }
+              onClick={handleSubmit}
+              type="submit"
+              className="add-user-btn"
+            >
+              Add
+            </button>
           </div>
         </div>
       </form>

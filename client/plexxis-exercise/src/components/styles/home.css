@@ -1,0 +1,32 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  
+  /* width: 100%;
+  flex-direction: column;
+  justify-content: center; */
+  /* min-height: 101vh;  */
+  
+}
+.sideBar {
+  width: 30%;
+  /* height: 100%;
+  width: 30%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 40px;
+  background-color: lightblue; */
+  }
+
+.tableContainer {
+  /* padding-top: 7rem;
+  display: flex;
+  position: absolute;
+  left:500;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  max-width: 70%; */
+}
