@@ -13,4 +13,3 @@ export default function Button(props) {
     </button>
   );
 }
-// <div class="spin"/>

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useTable } from "react-table";
-import { mockData } from "./mockData";
+import { mockData } from "./data/mockData";
 import { Columns } from "./Columns";
 import "./styles/table.css";
 

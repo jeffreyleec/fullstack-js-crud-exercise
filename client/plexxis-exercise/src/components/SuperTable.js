@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useContext } from "react";
 import { useTable, useSortBy, usePagination } from "react-table";
-import { mockData } from "./mockData";
+import { mockData } from "./data/mockData";
 import { Columns } from "./Columns";
 import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
