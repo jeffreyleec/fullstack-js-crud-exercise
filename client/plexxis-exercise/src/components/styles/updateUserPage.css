@@ -22,7 +22,7 @@
 }
 
 .updateTitle{
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .update-form-control{
@@ -35,4 +35,12 @@ height:1.6em;
 .update-user-button{
   width:100%;
   height:4em;
+  background-color: rgb(117, 233, 157);
+  
+}
+.updateInputTitles{
+  font-size:2em;
+  padding-bottom: 0px;
+  margin-bottom: 1px;
+  margin-top: 3px;
 }

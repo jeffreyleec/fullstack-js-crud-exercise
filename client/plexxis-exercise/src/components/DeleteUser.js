@@ -7,27 +7,27 @@ export const DeleteUser = () => {
   const { users, setUsers } = useContext(UsersContext);
 
   const [id, setID] = useState("");
-  // console.log(users)
-  
+
+  //  const result = confirm("Want to delete?");
+  // if (result) {
+  //     //Logic to delete the item
+  // }
 
   const handleDelete = async (id) => {
-    // e.preventDefault()
-   
+    const result = window.confirm("Are you sure to delete?");
+    if (result) {
+      try {
+        const response = await UserRetrieve.delete(`/user/${id}`);
+        console.log(response);
 
-    try {
-
-
-      const response = await UserRetrieve.delete(`/user/${id}`);
-      console.log(response);
-      
-      setUsers(
-        users.filter((user) => {
-          return user.id !== id;
-        })
-      );
-    } catch (err) {
-      console.log(err);
-      
+        setUsers(
+          users.filter((user) => {
+            return user.id !== id;
+          })
+        );
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -51,7 +51,6 @@ export const DeleteUser = () => {
               disabled={!id}
               onClick={() => handleDelete(id)}
               type="submit"
-
             >
               ❌
             </button>

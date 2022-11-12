@@ -51,7 +51,7 @@ export const UpdateUser = () => {
       });
       navigate(`/`)
       //  addUser(response.data.data)
-      //console.log(updateUser);
+      console.log(updateUser);
     } catch (err) {
       //console.log(err);
     }
@@ -63,7 +63,7 @@ export const UpdateUser = () => {
       <form className="updateForm">
         <div className="form-row">
           <div className="col">
-            <p>name</p>
+            <p className="updateInputTitles" >Name: </p>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -73,6 +73,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >Code: </p>
             <input
               value={code}
               onChange={(e) => setCode(e.target.value)}
@@ -82,6 +83,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >Profession: </p>
             <input
               value={profession}
               onChange={(e) => setProfession(e.target.value)}
@@ -91,6 +93,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >Color: </p>
             <input
               value={color}
               onChange={(e) => setColor(e.target.value)}
@@ -100,6 +103,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >City: </p>
             <input
               value={city}
               onChange={(e) => setCity(e.target.value)}
@@ -109,6 +113,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >Branch: </p>
             <input
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
@@ -118,6 +123,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
+          <p className="updateInputTitles" >Assigned: </p>
             <select
               value={assigned}
               onChange={(e) => setAssigned(e.target.value)}
@@ -145,7 +151,7 @@ export const UpdateUser = () => {
               type="submit"
               className="update-user-button"
             >
-              🖊
+              UPDATE
             </button>
           </div>
         </div>
