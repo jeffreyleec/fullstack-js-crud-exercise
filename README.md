@@ -48,12 +48,26 @@ Fork or clone our repository into your own repository.
 Send us the link when you are done the exercise (pglinker at plexxis dot com).
 When you are done, we'll schedule a zoom call with you where you will share your screen, demo the application for us, and walk us through the code while we ask questions about it.
 
+### Main Focus
+1. RESTful API routes, Postgres CRUD functionality 
+2. React-table 
+3. Organized file structure 
+
+
 ### Personal goals and steps
 1. Get comfortable with react-table
+  - add features: pagination, show x rows, sort columns
 2. Connect react-table with provided mock data
-3. Create Postgres db, users table, seed data
-4. Create Crud routes in both front and back-end
-5. Create routes and link server to client
-6. Context react-table with db data
-7. Creat UI for CRUD, user able to delete/add/edit/getone/getall users
-8. polish styling, debug and edge cases. 
+3. Create Postgres DB, schema for drop/create users table, inserting seed data
+4. Create CRUD routes and link server to client
+5. Context react-table with db data
+6. Creat UI for CRUD, user able to delete/add/edit/getone/getall users
+7. polish styling, debug and edge cases. 
+ - Delete and Update only accepts integers
+ - all inputs for C,U,D must be filled for button to be active
+ - Data formatting with Utils Functions
+
+ ### Future improvements for considerations
+ 1. TDD and addition testing for edge cases (C,U,D request with ID that does not exist)
+ 2. UX/UI for different screen size media queries
+ 3. additional error handling and messages 
