@@ -16,7 +16,7 @@ export const EditUser = () => {
 
   return (
     <div className="editUserContainer">
-      <p className="editTitle">EDIT User Information</p>
+      <p className="editTitle">EDIT Employee </p>
       <form>
         <div className="form-row">
           <div className="col">
@@ -31,7 +31,7 @@ export const EditUser = () => {
           </div>
 
           <div>
-            <button disabled={!id} onClick={() => handleEdit(id)} type="button">
+            <button className="add-user-btn" disabled={!id} onClick={() => handleEdit(id)} type="button">
               🖊
             </button>
           </div>

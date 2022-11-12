@@ -123,7 +123,7 @@ export const AddUser = () => {
               type="submit"
               className="add-user-btn"
             >
-              Add
+              ➕
             </button>
           </div>
         </div>

@@ -33,7 +33,7 @@ export const DeleteUser = () => {
 
   return (
     <div className="deleteUserContainer">
-      <p className="deleteTitle">Delete a USER </p>
+      <p className="deleteTitle">Delete Employee </p>
       <form>
         <div className="form-row">
           <div className="col">
@@ -48,6 +48,7 @@ export const DeleteUser = () => {
 
           <div>
             <button
+            className="add-user-btn"
               disabled={!id}
               onClick={() => handleDelete(id)}
               type="submit"

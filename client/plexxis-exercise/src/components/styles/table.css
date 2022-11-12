@@ -5,6 +5,8 @@ table {
   font-size: 1.8em;
 }
 
+
+
 table td, table th {
   border: 1px solid black;
   padding: 8px;
@@ -27,3 +29,4 @@ table th {
   text-align: center;
   width: 100%;
 }
+

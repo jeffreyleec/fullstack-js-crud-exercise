@@ -11,9 +11,8 @@ import { Header } from "./Header";
 export const SuperTable = (props) => {
   const { users, setUsers } = useContext(UsersContext);
 
-
   // const data = useMemo(() => {
-    useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await UserRetrieve.get("/user");
@@ -51,9 +50,9 @@ export const SuperTable = (props) => {
   return (
     // apply the table props
     <>
-              <Header />
+      <Header />
 
-    <select
+      <select
         value={pageSize}
         onChange={(e) => setPageSize(Number(e.target.value))}
       >
@@ -63,7 +62,7 @@ export const SuperTable = (props) => {
           </option>
         ))}
       </select>
-      <table {...getTableProps() } className="mainTable">
+      <table {...getTableProps()} className="mainTable">
         <thead>
           {
             // Loop over the header rows
@@ -114,9 +113,7 @@ export const SuperTable = (props) => {
                           {
                             // Render the cell contents
                             cell.render("Cell")
-                            
                           }
-                          
                         </td>
                       );
                     })
@@ -134,17 +131,21 @@ export const SuperTable = (props) => {
             {pageIndex + 1} of {pageOptions.length}{" "}
           </strong>
         </span>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage} type="button">
+        <button
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+          type="button"
+        >
           Previous
         </button>
-        <button onClick={() => nextPage()} disabled={!canNextPage} type="button">
+        <button
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+          type="button"
+        >
           Next
         </button>
       </div>
-
-      
     </>
   );
-
-
 };
