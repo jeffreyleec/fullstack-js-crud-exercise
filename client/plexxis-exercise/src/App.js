@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { UpdateUser } from "./routes/UpdateUser";
 import { UsersContextProvider } from "./context/UsersContext";
-import "./app.css"
-import homeIcon from "./components/assets/homeIcon.png"
+import "./app.css";
+import homeIcon from "./components/assets/homeIcon.png";
 
 function App() {
   return (
@@ -12,8 +12,9 @@ function App() {
       <Router>
         <div className="nav">
           <nav>
-          <Link to="/"><img  Link to="/" src={homeIcon} alt="home"></img></Link>
-
+            <Link to="/">
+              <img className="homeIMG" src={homeIcon} alt="home"></img>
+            </Link>
           </nav>
 
           {/* A <Switch> looks through its children <Route>s and

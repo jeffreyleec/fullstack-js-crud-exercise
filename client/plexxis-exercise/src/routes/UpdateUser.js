@@ -3,6 +3,9 @@ import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import "../components/styles/updateUserPage.css"
+
+
 export const UpdateUser = () => {
   const navigate = useNavigate();
   //controlled components
@@ -48,23 +51,24 @@ export const UpdateUser = () => {
       });
       navigate(`/`)
       //  addUser(response.data.data)
-      console.log(updateUser);
+      //console.log(updateUser);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
   return (
-    <div>
-      Update User
-      <form>
+    <div className="updateContainer">
+      <p className="updateTitle">Update Employee Information</p>
+      <form className="updateForm">
         <div className="form-row">
           <div className="col">
+            <p>name</p>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="Name"
             />
           </div>
@@ -73,7 +77,7 @@ export const UpdateUser = () => {
               value={code}
               onChange={(e) => setCode(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="Code"
             />
           </div>
@@ -82,7 +86,7 @@ export const UpdateUser = () => {
               value={profession}
               onChange={(e) => setProfession(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="Profession"
             />
           </div>
@@ -91,7 +95,7 @@ export const UpdateUser = () => {
               value={color}
               onChange={(e) => setColor(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="Color"
             />
           </div>
@@ -100,7 +104,7 @@ export const UpdateUser = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="City"
             />
           </div>
@@ -109,7 +113,7 @@ export const UpdateUser = () => {
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
               type="text"
-              className="form-control"
+              className="update-form-control"
               placeholder="Branch"
             />
           </div>
@@ -117,7 +121,7 @@ export const UpdateUser = () => {
             <select
               value={assigned}
               onChange={(e) => setAssigned(e.target.value)}
-              className="form-control"
+              className="update-form-control"
             >
               <option hidden value="">
                 Assigned
@@ -139,7 +143,7 @@ export const UpdateUser = () => {
             }
               onClick={handleSubmit}
               type="submit"
-              className="add-user-btn"
+              className="update-user-button"
             >
               🖊
             </button>

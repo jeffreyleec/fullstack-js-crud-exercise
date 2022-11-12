@@ -21,11 +21,9 @@ export const EditUser = () => {
         <div className="form-row">
           <div className="col">
             <input
-            
-            
               value={id}
               onChange={(e) => setID(e.target.value)}
-              type="text"
+              type="number"
               className="form-control"
               placeholder="Enter ID"
               required
@@ -33,7 +31,7 @@ export const EditUser = () => {
           </div>
 
           <div>
-            <button   disabled={!id} onClick={() => handleEdit(id)} type="button">
+            <button disabled={!id} onClick={() => handleEdit(id)} type="button">
               🖊
             </button>
           </div>
