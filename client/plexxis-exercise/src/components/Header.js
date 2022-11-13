@@ -1,11 +1,11 @@
 import React from 'react'
 import "./styles/header.css"
 
-export const Header = () => {
+export const Header = (props) => {
   return (
-    // <p className="headerTitle">Employee Database</p>
     <div className="title">
-    <h1>Employee Database<span>React Table</span></h1>
+    <h1>{props.title}<span>{props.subTitle}</span></h1>
+    
   </div>
   )
 }

@@ -5,7 +5,7 @@ import { Columns } from "./Columns";
 import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
-import "./styles/superTable.css";
+// import "./styles/superTable.css";
 import { Header } from "./Header";
 
 export const SuperTable = (props) => {
@@ -50,8 +50,7 @@ export const SuperTable = (props) => {
   return (
     // apply the table props
     <>
-      <Header />
-
+      <Header title="Employee Database" subTitle="React Table"/>
       <select
         value={pageSize}
         onChange={(e) => setPageSize(Number(e.target.value))}

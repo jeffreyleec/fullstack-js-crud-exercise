@@ -4,6 +4,7 @@ import { UsersContext } from "../context/UsersContext";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import "../components/styles/updateUserPage.css"
+import { Header } from "../components/Header";
 
 
 export const UpdateUser = () => {
@@ -59,7 +60,9 @@ export const UpdateUser = () => {
 
   return (
     <div className="updateContainer">
-      <p className="updateTitle">Update Employee Information</p>
+
+<Header title="Update Employee Information" subTitle={name}/>      
+      
       <form className="updateForm">
         <div className="form-row">
           <div className="col">
@@ -127,7 +130,7 @@ export const UpdateUser = () => {
             <select
               value={assigned}
               onChange={(e) => setAssigned(e.target.value)}
-              className="update-form-control"
+              className="update-form-control update-select"
             >
               <option hidden value="">
                 Assigned
@@ -149,7 +152,7 @@ export const UpdateUser = () => {
             }
               onClick={handleSubmit}
               type="submit"
-              className="update-user-button"
+              className="update-user-button "
             >
               UPDATE
             </button>

@@ -3,6 +3,7 @@ import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import "../components/styles/deleteUser.css";
 
+
 export const DeleteUser = () => {
   const { users, setUsers } = useContext(UsersContext);
 
