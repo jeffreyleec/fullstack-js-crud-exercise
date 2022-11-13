@@ -17,8 +17,6 @@ function App() {
             </Link>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-      renders the first one that matches the current URL. */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user/update/:id" element={<UpdateUser />} />

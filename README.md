@@ -3,9 +3,7 @@
 ### Contributors: [Jeffrey Lee](https://github.com/jeffreyleec)
 
 ### Overview
-For plexxis
-
-
+Plexxis
 
 ### Getting Started
 1. Run `npm i` in both server and client folders
@@ -15,7 +13,7 @@ For plexxis
 5. Start the client with `npm start`
 
 
-### Project goals and outline
+<!-- ### Project Instructions
 Requirements
 Create a simple but impressive (looks good, works well, has intuitive design, etc.) CRUD application that can do the following:
 
@@ -46,7 +44,7 @@ You are free to use whatever libraries that you want. Be prepared to speak to yo
 There is no time limit. Use as little or as much time as is necessary, but aim to get it done within a week. If you need more time it's no problem, but you must let us know. Sometimes life happens. That's ok.
 Fork or clone our repository into your own repository.
 Send us the link when you are done the exercise (pglinker at plexxis dot com).
-When you are done, we'll schedule a zoom call with you where you will share your screen, demo the application for us, and walk us through the code while we ask questions about it.
+When you are done, we'll schedule a zoom call with you where you will share your screen, demo the application for us, and walk us through the code while we ask questions about it. -->
 
 ### Main Focus
 1. RESTful API routes, Postgres CRUD functionality 

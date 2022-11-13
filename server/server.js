@@ -125,24 +125,7 @@ app.delete("/user/:id", async (req, res) => {
   }
 });
 
-// const deleteUser = require("./db/routes/deleteUser")
-// const getAllUsers = require("./db/routes/getAllUsers")
-// const getOneUser = require("./db/routes/getOneUser")
-// const newUser = require("./db/routes/newUser")
-
-
-// // Routes
-// app.get('/user', getAllUsers)
-// app.get('/user/:id', getOneUser)
-// app.delete('/user/:id', deleteUser)
-// app.post('/user', newUser)
-
-
-
-
-
 const port = process.env.PORT || 3001;
-
 
 app.listen(port, () => {
   console.log(`server is up and listening on port ${port}`);

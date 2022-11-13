@@ -5,7 +5,7 @@ import "../components/styles/addUser.css";
 
 
 export const AddUser = () => {
-  const { addUser } = useContext(UsersContext);
+  const { users, setUsers } = useContext(UsersContext);
   //controlled components
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
@@ -14,6 +14,10 @@ export const AddUser = () => {
   const [city, setCity] = useState("");
   const [branch, setBranch] = useState("");
   const [assigned, setAssigned] = useState("");
+
+  const addUser = (newUser) => {
+    setUsers([...users, newUser])
+  }
 
   const handleSubmit = async (e) => {
     //avoids reload when form submission

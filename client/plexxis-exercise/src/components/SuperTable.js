@@ -1,17 +1,14 @@
 import React, { useMemo, useEffect, useContext } from "react";
 import { useTable, useSortBy, usePagination } from "react-table";
-import { mockData } from "./data/mockData";
 import { Columns } from "./Columns";
 import "./styles/table.css";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
-// import "./styles/superTable.css";
 import { Header } from "./Header";
 
 export const SuperTable = (props) => {
   const { users, setUsers } = useContext(UsersContext);
 
-  // const data = useMemo(() => {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -50,7 +47,8 @@ export const SuperTable = (props) => {
   return (
     // apply the table props
     <>
-      <Header title="Employee Database" subTitle="React Table"/>
+      <Header title="Employee Database" subTitle="React Table" />
+      {/* Number Of employees loaded per page  */}
       <select
         value={pageSize}
         onChange={(e) => setPageSize(Number(e.target.value))}
@@ -124,6 +122,7 @@ export const SuperTable = (props) => {
         </tbody>
       </table>
       <div>
+        {/* pagnation */}
         <span>
           Page{" "}
           <strong>

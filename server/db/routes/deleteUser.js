@@ -8,8 +8,6 @@ app.use(cors());
 app.use(express.json());
 
 //delete a user by id
-
-
 app.delete("/user/:id", async (req, res) => {
   try {
     const results = await db.query(`DELETE FROM users WHERE id = $1`, [

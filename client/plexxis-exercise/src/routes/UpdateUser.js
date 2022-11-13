@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import "../components/styles/updateUserPage.css"
+import { useNavigate } from "react-router-dom";
+import "../components/styles/updateUserPage.css";
 import { Header } from "../components/Header";
-
 
 export const UpdateUser = () => {
   const navigate = useNavigate();
@@ -23,7 +22,6 @@ export const UpdateUser = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await UserRetrieve.get(`/user/${id}`);
-      //console.log(response.data.data[0].name);
 
       setName(response.data.data[0].name);
       setCode(response.data.data[0].code);
@@ -37,7 +35,6 @@ export const UpdateUser = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    //avoids reload when form submission
     e.preventDefault();
 
     try {
@@ -50,23 +47,22 @@ export const UpdateUser = () => {
         branch,
         assigned,
       });
-      navigate(`/`)
+      navigate(`/`);
       //  addUser(response.data.data)
       console.log(updateUser);
     } catch (err) {
-      //console.log(err);
+      console.log(err);
     }
   };
 
   return (
     <div className="updateContainer">
+      <Header title="Update Employee Information" subTitle={name} />
 
-<Header title="Update Employee Information" subTitle={name}/>      
-      
       <form className="updateForm">
         <div className="form-row">
           <div className="col">
-            <p className="updateInputTitles" >Name: </p>
+            <p className="updateInputTitles">Name: </p>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -76,7 +72,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >Code: </p>
+            <p className="updateInputTitles">Code: </p>
             <input
               value={code}
               onChange={(e) => setCode(e.target.value)}
@@ -86,7 +82,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >Profession: </p>
+            <p className="updateInputTitles">Profession: </p>
             <input
               value={profession}
               onChange={(e) => setProfession(e.target.value)}
@@ -96,7 +92,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >Color: </p>
+            <p className="updateInputTitles">Color: </p>
             <input
               value={color}
               onChange={(e) => setColor(e.target.value)}
@@ -106,7 +102,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >City: </p>
+            <p className="updateInputTitles">City: </p>
             <input
               value={city}
               onChange={(e) => setCity(e.target.value)}
@@ -116,7 +112,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >Branch: </p>
+            <p className="updateInputTitles">Branch: </p>
             <input
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
@@ -126,7 +122,7 @@ export const UpdateUser = () => {
             />
           </div>
           <div className="col">
-          <p className="updateInputTitles" >Assigned: </p>
+            <p className="updateInputTitles">Assigned: </p>
             <select
               value={assigned}
               onChange={(e) => setAssigned(e.target.value)}
@@ -141,15 +137,15 @@ export const UpdateUser = () => {
           </div>
           <div>
             <button
-            disabled={
-              !name ||
-              !code ||
-              !profession ||
-              !color ||
-              !city ||
-              !branch ||
-              !assigned
-            }
+              disabled={
+                !name ||
+                !code ||
+                !profession ||
+                !color ||
+                !city ||
+                !branch ||
+                !assigned
+              }
               onClick={handleSubmit}
               type="submit"
               className="update-user-button "
@@ -162,4 +158,3 @@ export const UpdateUser = () => {
     </div>
   );
 };
-
