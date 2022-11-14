@@ -70,10 +70,7 @@ When you are done, we'll schedule a zoom call with you where you will share your
  2. UX/UI for different screen size media queries
  3. additional error handling and messages 
 
-
-![Home Page](https://user-images.githubusercontent.com/105941243/201579377-d4a1ba49-5d53-46db-98a3-0b5b26455755.png)
-
-
+![Home Page](https://user-images.githubusercontent.com/105941243/201580054-b7339edc-c5c1-43f7-92b7-0238195631cc.png)
 ![Update Page](https://user-images.githubusercontent.com/105941243/201579549-69d4d1be-aff1-4927-9965-b9003ab86816.png)
 
 
