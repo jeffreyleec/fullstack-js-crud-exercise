@@ -8,10 +8,17 @@ export const EditUser = () => {
   const { users, setUsers } = useContext(UsersContext);
   const navigate = useNavigate();
 
-  const [id, setID] = useState("");
+  const [currentid, setID] = useState("");
 
-  const handleEdit = (id) => {
-    navigate(`/user/update/${id}`);
+  const handleEdit = (currentid) => {
+
+    if (users.find((obj)=> obj.id === parseInt(currentid))) {
+      console.log("we have a match!!");
+      return navigate(`/user/update/${currentid}`);
+    } else {
+      console.log("err 404");
+      alert("not found");
+    }
   };
 
   return (
@@ -21,7 +28,7 @@ export const EditUser = () => {
         <div className="form-row">
           <div className="col">
             <input
-              value={id}
+              value={currentid}
               onChange={(e) => setID(e.target.value)}
               type="number"
               className="form-control"
@@ -31,7 +38,12 @@ export const EditUser = () => {
           </div>
 
           <div>
-            <button className="add-user-btn" disabled={!id} onClick={() => handleEdit(id)} type="button">
+            <button
+              className="add-user-btn"
+              disabled={!currentid}
+              onClick={() => handleEdit(currentid)}
+              type="button"
+            >
               🖊
             </button>
           </div>

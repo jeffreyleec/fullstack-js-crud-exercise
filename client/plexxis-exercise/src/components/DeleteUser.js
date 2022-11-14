@@ -13,6 +13,13 @@ export const DeleteUser = () => {
   // if (result) {
   //     //Logic to delete the item
   // }
+  // if (users.find((obj)=> obj.id === parseInt(currentid))) {
+  //   console.log("we have a match!!");
+  //   return navigate(`/user/update/${currentid}`);
+  // } else {
+  //   console.log("err 404");
+  //   alert("not found");
+  // }
 
   const handleDelete = async (id) => {
     const result = window.confirm("Are you sure to delete?");

@@ -121,7 +121,7 @@ export const SuperTable = (props) => {
           }
         </tbody>
       </table>
-      <div>
+      <div className="paginationContainer">
         {/* pagnation */}
         <span>
           Page{" "}
@@ -129,20 +129,23 @@ export const SuperTable = (props) => {
             {pageIndex + 1} of {pageOptions.length}{" "}
           </strong>
         </span>
-        <button
-          onClick={() => previousPage()}
-          disabled={!canPreviousPage}
-          type="button"
-        >
-          Previous
-        </button>
-        <button
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-          type="button"
-        >
-          Next
-        </button>
+
+        <div className="paginationButtons">
+          <button
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+            type="button"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+            type="button"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </>
   );

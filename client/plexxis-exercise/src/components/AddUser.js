@@ -3,7 +3,6 @@ import UserRetrieve from "../apis/UserRetrieve";
 import { UsersContext } from "../context/UsersContext";
 import "../components/styles/addUser.css";
 
-
 export const AddUser = () => {
   const { users, setUsers } = useContext(UsersContext);
   //controlled components
@@ -16,8 +15,8 @@ export const AddUser = () => {
   const [assigned, setAssigned] = useState("");
 
   const addUser = (newUser) => {
-    setUsers([...users, newUser])
-  }
+    setUsers([...users, newUser]);
+  };
 
   const handleSubmit = async (e) => {
     //avoids reload when form submission
@@ -35,6 +34,15 @@ export const AddUser = () => {
       });
       addUser(response.data.data);
       console.log(response);
+
+      setName("");
+      setCode("");
+      setProfession("");
+      setColor("");
+      setCity("");
+      setBranch("");
+      setAssigned("");
+      
     } catch (err) {
       console.log(err);
     }

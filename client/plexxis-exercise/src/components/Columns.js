@@ -3,11 +3,11 @@ export const Columns = [
   {
     Header: "ID",
     accessor: "id",
-    // Cell:({value})=> {return value +500}
   },
   {
     Header: "Name",
     accessor: "name",
+    //cell property controls whats rendered in the UI
     Cell:({value})=> {return capitalizeFirstLetter(value) }
 
   },
