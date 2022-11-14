@@ -69,3 +69,12 @@ When you are done, we'll schedule a zoom call with you where you will share your
  1. TDD and addition testing for edge cases (C,U,D request with ID that does not exist)
  2. UX/UI for different screen size media queries
  3. additional error handling and messages 
+
+
+![Home Page](https://user-images.githubusercontent.com/105941243/201579377-d4a1ba49-5d53-46db-98a3-0b5b26455755.png)
+
+
+![Update Page](https://user-images.githubusercontent.com/105941243/201579549-69d4d1be-aff1-4927-9965-b9003ab86816.png)
+
+
+
